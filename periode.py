@@ -1,7 +1,7 @@
 from math import *
 import numpy as np
 import matplotlib.pyplot as plt
-import matplotlib.animation as animation
+#import matplotlib.animation as animation
 
 z0 = 1      #position initiale du pendule en mètre à t=0
 Omega = ((2 * np.pi) / 86164)  # vitesse de rotation de la Terre (qui sera ensuite multipliée par 200 pour rendre l'animation plus visible et compréhensible)
@@ -9,14 +9,23 @@ l = 67      #longueur de la corde du pendule en mètre
 g = 9.81    #intensité du champ de pesanteur à la surface de la Terre (en m.s^-2)
 latitude = float(input("A quelle latitude voulez vous observez le pendule de Foucault ? :"))
 teta = np.deg2rad(latitude)  # conversion de la latitude de degré en radian
+
 while (teta > 2 * np.pi):  # modulo 2pi
     teta -= 2 * pi
 while (teta < 0):
     teta += 2 * pi
 
+hemisphere=str(input('Dans quel hémisphère se trouve votre position géographique :'))
+if hemisphere.lower() == "n":
+    hemisphere=1
+elif hemisphere.lower() == "s":
+    hemisphere = -1
+
+
+
 w = np.sqrt(g / l)
 w0 = np.sqrt(np.square(w) + np.square(Omega) * np.square(np.sin(teta)))
-t = np.arange(0, 215, 1)
+t = np.arange(0, 200, 1)
 
 
 def calculPeriode():
@@ -41,7 +50,7 @@ def calculPeriode():
 
 def graph_pendule():
 
-    Omega_accelere = Omega * 200
+    Omega_accelere = Omega * 210
 
     # fonction
     e = (-1) * 1j * Omega_accelere * np.sin(teta) * t
@@ -60,15 +69,18 @@ def graph_pendule():
     plt.xlim(-1, 1)
     plt.ylim(-1, 1)
 
+
     # affichage de la courbe
-    plt.plot(X,Y,'green')
+    fig=plt.plot(X,Y,'green')
     plt.grid()
     plt.show()
 
     # z0*np.cos(w0*t)
     # (z0*Omega*np.sin(teta)*np.sin(w0*t))/w0
     # 210*(2*np.pi)/86164
-    return X,Y
+    return X,Y, fig
 
 calculPeriode()
 graph_pendule()
+#ani = animation.FuncAnimation(fig, graph_pendule, frames=100, blit=True, interval=20, repeat=False)
+
