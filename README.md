@@ -1,2 +1,2 @@
 # pendule_de_foucault
-Science du numérique pendule de foucault en python (et en javascript potentiellement)
+Science du numérique modélisation du pendule de foucault en python 
