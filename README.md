@@ -11,3 +11,14 @@ Ne pas oublier de changer la dernière ligne du code final_pendule.py avec le ch
 L'animation enregistré s'ouvrira alors toute seule une fois que le fichier aura été créer
 Cela peut prendre plusiseur dizaines de secondes selon la latitude (plus la période est grande plus le nombre de calcul sera grand)
 
+
+
+
+Le fichier latitude_sagnac.py permet de montrer que la vitesse angulaire d'un corps à la surface de la Terre est la même peu importe sa latitude, elle correspond à la vitesse angulaire de la Terre soit 2pi/86164 (exprimé en rad/s)
+
+
+
+
+
+
+
