@@ -15,7 +15,7 @@ def disque_relativite_restreinte(w):  # le paramètre est la vitesse angulaire d
     return delta
 
 
-i =np.arange(0, 20, 1)
+i =np.arange(0, 20, 1)  #valeur de la vitesse angulaire, axe des abscisses
 graph=disque_relativite_restreinte(i)   #valeur de delta en fonction des valeurs de i, la vitesse angulaire
 point=disque_relativite_restreinte(Omega_Terre) #pour afficher le point d'abscisse Omega_Terre sur le graph
 plt.xlabel('vitesse angulaire (en rad/s)')  #légende de l'axe des abscisses
