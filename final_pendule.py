@@ -85,7 +85,7 @@ def graph_pendule():
     z = z0 * e * a
 
     X = z.real  # partie réelle de z
-    Y = hemisphere * z.imag  # partie imaginaire de z 
+    Y = hemisphere * z.imag  # partie imaginaire de z
     # la variable hémisphère sert à donner ou non l'opposé de la force de Coriolis selon si on se trouve sur l'hémisphère nord ou sud
 
     liste_X = []  # création d'une liste vide
@@ -111,31 +111,45 @@ def graph_pendule():
     fig = plt.figure()
 
     # on trace la courbe
+    f=z0_
+    g=0
+    triangle, = plt.plot(f, g,'y<',markersize=10, label='Position de départ du pendule')
     angle_cercle = np.linspace(0, 2 * np.pi,
                                180)  # création d'un cercle de rayon z0 pour que les oscillations du pendule apparaissent dedans, " un peu comme au Panthéon, en 1851"
     rayon = z0_
     c = rayon * np.cos(angle_cercle)
     d = rayon * np.sin(angle_cercle)
-    circle, = plt.plot(c, d, 'b')  # affichage du cercle
-    courbe, = plt.plot(X, Y, 'b-', markersize=10)  # affichage des oscillations
-    red_circle, = plt.plot(X, Y, 'ro', markersize=12)  # affichage du point qui modélise la boule du pendule
+    circle, = plt.plot(c, d, 'k')  # affichage du cercle
+    courbe, = plt.plot(X, Y, 'b-', markersize=10, label= 'Tracés des oscillations du pendules')  # affichage des oscillations
+    red_dot, = plt.plot(X, Y, 'ro', markersize=12, label= 'Boule du pendule')  # affichage du point qui modélise la boule du pendule
     plt.axis(
         "equal")  # pour que le graph soit proportionnel et pour ne pas afficher un cercle applati, égalise le pas de chaque axe
     plt.xlabel('X')  # on nomme les axes en fonction des affixes de z, ici X la partie réelle
     plt.ylabel('Y')  # on nomme les axes en fonction des affixes de z, ici Y la partie imaginaire
-    plt.title(f"Oscillation du pendule de Foucault à la latitude %d$°$" % latitude_)
+    plt.title(f"Oscillation du pendule de Foucault à la latitude %d$°$" % latitude_) #titre qui varie en fonction de la variable 'latitude' entrée par l'utilisateur
+    
+    #configuration de la légende
+    leg_1=plt.legend(handles=[triangle], loc='upper right',fontsize=6)
+    leg_2=plt.legend(handles=[red_dot], loc='upper left',fontsize=6)
+    leg_3=plt.legend(handles=[courbe], loc='lower right',fontsize=6)
+    fig.add_artist(leg_1)
+    fig.add_artist(leg_2)
+    fig.add_artist(leg_3)
+
+
 
     # configuration de l'enregistrement de l'animation
     with writer.saving(fig, "pendule.mp4",
                        300):  # on choisit la figure à animer, le nom du fichier à sauvegarder et la résolution en dpi
-        for i in range(periode_new):
+        for i in range(10):
             x0 = X[i]  # le point prend la valeur de X toutes les secondes
             y0 = Y[i]  # le point prend la valeur de Y toutes les secondes
             liste_X.append(X[i])  # on remplit toutes les secondes la liste vide avec les valeurs de X
             liste_Y.append(Y[i])  # on remplit toutes les secondes la liste vide avec les valeurs de Y
-            red_circle.set_data(x0, y0)  # set.data attribue les valeurs chaque seconde
+            red_dot.set_data(x0, y0)  # set.data attribue les valeurs chaque seconde
             courbe.set_data(liste_X, liste_Y)
             circle.set_data(c, d)
+            triangle.set_data(f, g)
             writer.grab_frame()
 
     return X, Y
