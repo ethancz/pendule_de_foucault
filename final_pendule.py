@@ -141,7 +141,7 @@ def graph_pendule():
     # configuration de l'enregistrement de l'animation
     with writer.saving(fig, "pendule.mp4",
                        300):  # on choisit la figure à animer, le nom du fichier à sauvegarder et la résolution en dpi
-        for i in range(10):
+        for i in range(periode_new):
             x0 = X[i]  # le point prend la valeur de X toutes les secondes
             y0 = Y[i]  # le point prend la valeur de Y toutes les secondes
             liste_X.append(X[i])  # on remplit toutes les secondes la liste vide avec les valeurs de X
