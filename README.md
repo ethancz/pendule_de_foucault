@@ -1,7 +1,7 @@
 # pendule_de_foucault
 Science du numérique modélisation du pendule de foucault en python 
 
-Pour le code final_pendule.py j'utilise FFmpeg pour animer et enregistrer l'animation du pendule le site pour télécharger cette "extensioné de python : https://www.gyan.dev/ffmpeg/builds/
+Pour le code _final_pendule.py_ j'utilise FFmpeg pour animer et enregistrer l'animation du pendule le site pour télécharger cette "extension" de python : https://www.gyan.dev/ffmpeg/builds/
 
 Il faut ensuite décompresser l'archive et copier le chemin du dossier /bin contenant les fichiers .exe
 Il faut mettre ce chemin dans vos varibale d'environnement, variable "path" .
@@ -14,9 +14,9 @@ Cela peut prendre plusiseur dizaines de secondes selon la latitude (plus la pér
 
 
 
-Le fichier latitude_sagnac.py permet de montrer que la vitesse angulaire d'un corps à la surface de la Terre est la même peu importe sa latitude, elle correspond à la vitesse angulaire de la Terre soit 2pi/86164 (exprimé en rad/s)
+Le fichier _latitude_sagnac.py_ permet de montrer que la vitesse angulaire d'un corps à la surface de la Terre est la même peu importe sa latitude, elle correspond à la vitesse angulaire de la Terre soit 2pi/86164 (exprimé en rad/s)
 
-
+Finalement _sagnac_effect.py_ modélise sur un graph le décalage temporel de 2 horloges à la vitesse v0 se déplaçant le long d'un disque tourant à une vitesse angulaire w
 
 
 
