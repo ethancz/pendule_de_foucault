@@ -26,3 +26,7 @@ print("\n\nla valeur de la vitesse angulaire dépend donc de la latitude")
 
 
 
+
+
+
+
