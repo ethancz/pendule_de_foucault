@@ -14,7 +14,7 @@ Cela peut prendre plusiseur dizaines de secondes selon la latitude choisie (plus
 
 
 
-Le fichier _latitude_sagnac.py_ permet de montrer que la vitesse angulaire d'un corps à la surface de la Terre est la même peu importe sa latitude, elle correspond à la vitesse angulaire de la Terre soit 2pi/86164 (exprimé en rad/s)
+Le fichier _latitude_sagnac.py_ permet de montrer que la vitesse angulaire d'un corps à la surface de la Terre est la même peu importe sa latitude, elle correspond à la vitesse angulaire de la Terre soit 2pi/86164 (exprimée en rad/s)
 
 Finalement _sagnac_effect.py_ modélise sur un graph le décalage temporel de 2 horloges à la vitesse v0 se déplaçant le long d'un disque tourant à une vitesse angulaire w
 
