@@ -4,7 +4,7 @@ Science du numérique modélisation du pendule de foucault en python
 Pour le code _final_pendule.py_ j'utilise FFmpeg pour animer et enregistrer l'animation du pendule le site pour télécharger cette "extension" de python : https://www.gyan.dev/ffmpeg/builds/
 
 Il faut ensuite décompresser l'archive et copier le chemin du dossier /bin contenant les fichiers .exe
-Il faut mettre ce chemin dans vos varibale d'environnement, variable "path" .
+Il faut mettre ce chemin dans vos varibales d'environnement, variable "path" .
 Ensuite le programme devrait fonctionner
 
 Ne pas oublier de changer la dernière ligne du code _final_pendule.py_ avec le chemin correspondant au dossier de votre projet.
